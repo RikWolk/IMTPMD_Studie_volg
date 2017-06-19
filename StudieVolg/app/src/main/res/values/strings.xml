@@ -6,4 +6,7 @@
     <string name="btnJaar3">Jaar 3</string>
     <string name="btnJaar4">Jaar 4</string>
     <string name="btnKeuzeVakken">Keuzevakken</string>
+    <string name="vakNaam" />
+    <string name="vakEC" />
+    <string name="vakCijfer" />
 </resources>
