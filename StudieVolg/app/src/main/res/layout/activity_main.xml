@@ -11,8 +11,9 @@
         android:id="@+id/BtnJaarOverzicht"
         android:layout_width="229dp"
         android:layout_height="53dp"
+        android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:text="Cijfer Overzicht"
+        android:text="@string/BtnJaarOverzicht"
         android:background="@drawable/mybutton"
         android:visibility="visible"
         tools:text="Cijfer Overzicht"
@@ -24,7 +25,8 @@
         app:layout_constraintHorizontal_bias="0.503"
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.891" />
 
 
 </android.support.constraint.ConstraintLayout>

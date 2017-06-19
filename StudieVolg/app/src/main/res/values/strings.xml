@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">StudieVolger</string>
-    <string name="BtnJaarOverzicht" />
+    <string name="BtnJaarOverzicht">Cijfer overzicht</string>
+    <string name="btnJaar1">Jaar 1</string>
+    <string name="btnJaar2">Jaar 2</string>
+    <string name="btnJaar3">Jaar 3</string>
+    <string name="btnJaar4">Jaar 4</string>
+    <string name="btnKeuzeVakken">Keuzevakken</string>
 </resources>
