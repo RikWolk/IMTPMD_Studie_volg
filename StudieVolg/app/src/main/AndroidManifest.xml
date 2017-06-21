@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vindoozero.studievolg">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,11 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".Jaar_overzicht" />
-        <activity android:name=".Jaar1Cijfers" />
-        <activity android:name=".Jaar2Cijfers" />
-        <activity android:name=".Jaar3Cijfers" />
-        <activity android:name=".Jaar4Cijfers" />
-        <activity android:name=".JaarKeuzevakkenCijfers"></activity>
+        <activity android:name=".JaarKeuzevakkenCijfers" />
+        <activity android:name=".ListViewer" />
+        <activity
+            android:name=".FirebaseTest"
+            android:label="@string/title_activity_firebase_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".periode_overzicht"></activity>
     </application>
 
 </manifest>

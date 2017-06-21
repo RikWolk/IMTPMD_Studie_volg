@@ -8,14 +8,13 @@ import android.widget.Button;
 
 public class Jaar_overzicht extends AppCompatActivity {
 
-
     public Button btnJaar1;
     public Button btnJaar2;
     public Button btnJaar3;
     public Button btnJaar4;
     public Button btnKeuzeVakken;
 
-
+    final Bundle b = new Bundle();
 
     //Ga naar jaar 1 Cijfers
     public void gaNaarJaar1(){
@@ -23,8 +22,10 @@ public class Jaar_overzicht extends AppCompatActivity {
         btnJaar1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent jaar1cijfers = new Intent(Jaar_overzicht.this,Jaar1Cijfers.class);
-                startActivity(jaar1cijfers);
+                Intent Periode = new Intent(Jaar_overzicht.this,periode_overzicht.class);
+                b.putInt("jaar", 1);
+                Periode.putExtras(b);
+                startActivity(Periode);
             }
         });
     }
@@ -35,8 +36,10 @@ public class Jaar_overzicht extends AppCompatActivity {
         btnJaar2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent jaar2cijfers = new Intent(Jaar_overzicht.this,Jaar2Cijfers.class);
-                startActivity(jaar2cijfers);
+                Intent Periode = new Intent(Jaar_overzicht.this,periode_overzicht.class);
+                b.putInt("jaar", 2);
+                Periode.putExtras(b);
+                startActivity(Periode);
             }
         });
     }
@@ -47,8 +50,10 @@ public class Jaar_overzicht extends AppCompatActivity {
         btnJaar3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent jaar3cijfers = new Intent(Jaar_overzicht.this,Jaar3Cijfers.class);
-                startActivity(jaar3cijfers);
+                Intent Periode = new Intent(Jaar_overzicht.this,periode_overzicht.class);
+                b.putInt("jaar", 3);
+                Periode.putExtras(b);
+                startActivity(Periode);
             }
         });
     }
@@ -59,8 +64,10 @@ public class Jaar_overzicht extends AppCompatActivity {
         btnJaar4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent jaar4cijfers = new Intent(Jaar_overzicht.this,Jaar4Cijfers.class);
-                startActivity(jaar4cijfers);
+                Intent Periode = new Intent(Jaar_overzicht.this,periode_overzicht.class);
+                b.putInt("jaar", 4);
+                Periode.putExtras(b);
+                startActivity(Periode);
             }
         });
     }
@@ -77,11 +84,6 @@ public class Jaar_overzicht extends AppCompatActivity {
         });
     }
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,9 +93,5 @@ public class Jaar_overzicht extends AppCompatActivity {
         gaNaarJaar3();
         gaNaarJaar4();
         gaNaarKeuzevakken();
-
-
-
-
     }
 }

@@ -5,5 +5,10 @@
     <string name="btnJaar2">Jaar 2</string>
     <string name="btnJaar3">Jaar 3</string>
     <string name="btnJaar4">Jaar 4</string>
+    <string name="btnPeriode1">Periode 1</string>
+    <string name="btnPeriode2">Periode 2</string>
+    <string name="btnPeriode3">Periode 3</string>
+    <string name="btnPeriode4">Periode 4</string>
     <string name="btnKeuzeVakken">Keuzevakken</string>
+    <string name="title_activity_firebase_test">FirebaseTest</string>
 </resources>
