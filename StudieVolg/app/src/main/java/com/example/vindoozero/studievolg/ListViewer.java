@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -64,6 +65,8 @@ public class ListViewer extends AppCompatActivity {
                 String vakNaam = model.toString();
                 list.add(model);
 
+
+
                 // Wanneer de item GEEN keuzevak is, else -> maak item onzichtbaar (JE ZIET NOG WEL EEN PLACEHOLDER)
                 if (!model.isKeuzevak()){
 
@@ -104,14 +107,16 @@ public class ListViewer extends AppCompatActivity {
     // Hier staat de functie die de alert Dialog creeërt
     public void getDialog(final FirebaseListAdapter mAdapter, final int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Title");
+        builder.setTitle("Voer cijfer in");
 
         // Set up the input
         final EditText input = new EditText(this);
 
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        input.setFilters(new InputFilter[] {new DecimalDigitsInputFilter(3,1)});
         builder.setView(input);
+
 
         // Set up the buttons
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -119,8 +124,20 @@ public class ListViewer extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
 
 //              // Hier wordt de input (cijfer) die de gebruiker invoerd gebruikt om de cijfer + resultaat weer te uploaden via de functie calculateResult
+
                 result = Double.parseDouble(input.getText().toString());
-                calculateResult(mAdapter, position, result);
+
+                if(result > 10.0 || result < 1.0){
+                    Toast.makeText(ListViewer.this, "Vul een getal binnen de 1.0 en 10.0 in.",
+                            Toast.LENGTH_LONG).show();
+                }
+
+
+                else{
+                    calculateResult(mAdapter, position, result);
+                }
+
+
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -135,7 +152,7 @@ public class ListViewer extends AppCompatActivity {
 
     // Dit is een functie die automatisch de cijfer upload naar de database (+ gehaald true : false)
     public void calculateResult(FirebaseListAdapter mAdapter, int position, double res){
-        if (res < 5.4){
+        if (res < 5.5){
             mAdapter.getRef(position).child("gehaald").setValue(false);
             mAdapter.getRef(position).child("cijfer").setValue(result);
         }
