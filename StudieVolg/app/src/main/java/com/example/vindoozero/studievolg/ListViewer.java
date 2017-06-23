@@ -80,8 +80,6 @@ public class ListViewer extends AppCompatActivity {
                 String vakNaam = model.toString();
                 list.add(model);
 
-
-
                 // Wanneer de item GEEN keuzevak is, else -> maak item onzichtbaar (JE ZIET NOG WEL EEN PLACEHOLDER)
                 if (!model.isKeuzevak()){
 
