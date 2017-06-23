@@ -61,9 +61,19 @@ public class MainActivity extends AppCompatActivity {
 
         pbJaar1=(ProgressBar)findViewById(R.id.progressBarJaar1);
 
+
+        //Hier moet het maximaal aanpunten van dat jaar ingevuld worden.
+        pbJaar1.setMax(60);
+
+        //Hier moet het behaalde aantal punten ingevoerd worden
         pbJaar1.setProgress(50);
 
+
+
         textbarJaar1= (TextView)findViewById(R.id.textBar1);
+
+
+        //Hier moetzen ze beide ingevoerd worden om zo duidelijk het proces te zien
         textbarJaar1.setText("30 / 60");
 
 

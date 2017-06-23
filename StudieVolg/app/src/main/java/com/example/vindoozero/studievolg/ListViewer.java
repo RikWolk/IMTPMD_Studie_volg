@@ -114,6 +114,7 @@ public class ListViewer extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Voer cijfer in");
 
+
         // Set up the input
         final EditText input = new EditText(this);
 
