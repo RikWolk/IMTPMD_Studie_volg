@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     public Button BtnJaarOverzicht;
     ProgressBar pbJaar1, pbJaar2, pbJaar3, pbJaar4, pbKeuzevakken;
-    TextView textbarJaar1, TextbarJaar2, textbarJaar3, textbarJaar4, textbarKeuzevakken;
+    TextView textbarJaar1, textbarJaar2, textbarJaar3, textbarJaar4, textbarKeuzevakken;
 
 
     public void gaNaarCijfers(){
@@ -80,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("na de query 2", String.valueOf(ecJaar2));
                 Log.i("na de query 3", String.valueOf(ecJaar3));
                 Log.i("na de query 4", String.valueOf(ecJaar4));
+
+                fillBar();
             }
 
             @Override
@@ -104,11 +108,73 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void fillBar(){
+
+        int EcJaar1 = Integer.valueOf(ecJaar1);
+
+        pbJaar1=(ProgressBar)findViewById(R.id.progressBarJaar1);
+
+        //Hier moet het maximaal aanpunten van dat jaar ingevuld worden.
+        pbJaar1.setMax(60);
+
+        //Hier moet het behaalde aantal punten ingevoerd worden
+        pbJaar1.setProgress(EcJaar1);
+
+        textbarJaar1= (TextView)findViewById(R.id.textBar1);
+
+        //Hier moetzen ze beide ingevoerd worden om zo duidelijk het proces te zien
+        textbarJaar1.setText(EcJaar1 + " / 60 EC");
+
+
+
+        //jaar 2
+        int EcJaar2 = Integer.valueOf(ecJaar2);
+
+        pbJaar2=(ProgressBar)findViewById(R.id.progressBarJaar2);
+        pbJaar2.setMax(60);
+        pbJaar2.setProgress(EcJaar2);
+        textbarJaar2= (TextView)findViewById(R.id.textBar2);
+        textbarJaar2.setText(EcJaar2 + " / 60");
+
+        //jaar 3
+        int EcJaar3 = Integer.valueOf(ecJaar3);
+
+        pbJaar3=(ProgressBar)findViewById(R.id.progressBarJaar3);
+        pbJaar3.setMax(60);
+        pbJaar3.setProgress(EcJaar3);
+        textbarJaar3= (TextView)findViewById(R.id.textBar3);
+        textbarJaar3.setText(EcJaar3 + " / 60");
+
+
+        //jaar 4
+        int EcJaar4 = Integer.valueOf(ecJaar2);
+
+        pbJaar4=(ProgressBar)findViewById(R.id.progressBarJaar4);
+        pbJaar4.setMax(60);
+        pbJaar4.setProgress(EcJaar4);
+        textbarJaar4= (TextView)findViewById(R.id.textBar4);
+        textbarJaar4.setText(EcJaar4 + " / 60");
+
+
+        //Keuze vakken
+
+
+
+
+
+
+
+
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Bundle b = getIntent().getExtras();
+
+
 
         if(b != null){
             jaar = b.getInt("jaar");
@@ -128,18 +194,16 @@ public class MainActivity extends AppCompatActivity {
 
         gaNaarCijfers();
 
-        pbJaar1=(ProgressBar)findViewById(R.id.progressBarJaar1);
 
-        //Hier moet het maximaal aanpunten van dat jaar ingevuld worden.
-        pbJaar1.setMax(60);
 
-        //Hier moet het behaalde aantal punten ingevoerd worden
-        pbJaar1.setProgress(50);
+        Log.i("HOEVEEL IS EC1", String.valueOf(ecJaar1));
+        Log.i("HOEVEEL IS EC2", String.valueOf(ecJaar2));
+        Log.i("HOEVEEL IS EC3", String.valueOf(ecJaar3));
+        Log.i("HOEVEEL IS EC4", String.valueOf(ecJaar4));
 
-        textbarJaar1= (TextView)findViewById(R.id.textBar1);
 
-        //Hier moetzen ze beide ingevoerd worden om zo duidelijk het proces te zien
-        textbarJaar1.setText("30 / 60");
+
+
 
     }
 }

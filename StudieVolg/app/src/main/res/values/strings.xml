@@ -14,4 +14,23 @@
     <string name="jaar1Bar">Jaar 1</string>
     <string name="textBar1" />
     <string name="dashboard" />
+    <string name="toevoegen" />
+    <string name="checkkeuze" />
+    <string name="keuzecheck" />
+    <string name="Jaar2Bar">Jaar 2</string>
+    <string name="Jaar3Bar" />
+    <string name="Jaar4Bar">Jaar 4</string>
+    <string name="KeuzevakkenBar">Keuzevakken</string>
+    <string name="textbarJaar2" />
+    <string name="textbarJaar3" />
+    <string name="textbarJaar4" />
+    <string name="textbarKeuze" />
+    <string name="jaar2Bar">Jaar 2</string>
+    <string name="jaar3Bar">Jaar 3</string>
+    <string name="keuzeBar" />
+    <string name="textBar3" />
+    <string name="textBar2" />
+    <string name="jaar2Barrrr">Jaar 2</string>
+    <string name="jaar33baar">Jaar 3</string>
+    <string name="Keuzzbaaarr">Keuzevakken</string>
 </resources>
