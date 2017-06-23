@@ -11,4 +11,7 @@
     <string name="btnPeriode4">Periode 4</string>
     <string name="btnKeuzeVakken">Keuzevakken</string>
     <string name="title_activity_firebase_test">FirebaseTest</string>
+    <string name="jaar1Bar">Jaar 1</string>
+    <string name="textBar1" />
+    <string name="dashboard" />
 </resources>

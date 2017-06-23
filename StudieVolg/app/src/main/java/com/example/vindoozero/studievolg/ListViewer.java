@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -42,6 +43,8 @@ public class ListViewer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jaar1_cijfers);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // hier word de bundle die uit periode_overzicht komt uitgepakt,
         // uit het pakket komen de variabele Jaar en Periode.
@@ -51,6 +54,8 @@ public class ListViewer extends AppCompatActivity {
             jaar = b.getInt("jaar");
             periode = b.getInt("periode");
         }
+
+        this.setTitle("Periode " + periode);
 
         // Hier word een referentie naar de database (FireBase) in een variabele gedaan,
         // vervolgens wordt hier een query op afgevuurd die de vakken pakt met de desbetreffende Jaar en Periode (Zie Bundle)
@@ -161,6 +166,18 @@ public class ListViewer extends AppCompatActivity {
             mAdapter.getRef(position).child("cijfer").setValue(result);
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if(id == android.R.id.home){
+            this.finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

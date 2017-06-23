@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -75,9 +76,29 @@ public class periode_overzicht extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_periode_overzicht);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         Bundle b = getIntent().getExtras();
         int jaar = b.getInt("jaar");
+
+        if(jaar == 1){
+            this.setTitle("Jaar 1");
+        }
+        else if(jaar == 2){
+            this.setTitle("Jaar 2");
+        }
+        else if(jaar == 3){
+            this.setTitle("Jaar 3");
+        }
+        else if(jaar == 4){
+            this.setTitle("Jaar 4");
+        }
+        else{
+            this.setTitle("Keuzevakken");
+        }
+
 
         if (b != null){
             Log.i("testen JAAR:", String.valueOf(jaar));
@@ -86,5 +107,17 @@ public class periode_overzicht extends AppCompatActivity {
             gaNaarPeriode3(b);
             gaNaarPeriode4(b);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if(id == android.R.id.home){
+            this.finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
