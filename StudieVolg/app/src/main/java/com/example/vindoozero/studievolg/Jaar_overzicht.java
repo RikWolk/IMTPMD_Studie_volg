@@ -96,14 +96,8 @@ public class Jaar_overzicht extends AppCompatActivity {
         gaNaarKeuzevakken();
         this.setTitle("Jaar overzicht");
 
-
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
-
-
     }
 
     @Override
@@ -114,9 +108,6 @@ public class Jaar_overzicht extends AppCompatActivity {
         if(id == android.R.id.home){
             this.finish();
         }
-
         return super.onOptionsItemSelected(item);
     }
-
-
 }
