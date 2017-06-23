@@ -158,14 +158,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Keuze vakken
 
-
-
-
-
-
-
-
-
     }
 
     @Override

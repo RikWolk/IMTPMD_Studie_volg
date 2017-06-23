@@ -51,7 +51,7 @@ public class Jaar_overzicht extends AppCompatActivity {
         btnJaar3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent Periode = new Intent(Jaar_overzicht.this,periode_overzicht.class);
+                Intent Periode = new Intent(Jaar_overzicht.this,ListViewer.class);
                 b.putInt("jaar", 3);
                 Periode.putExtras(b);
                 startActivity(Periode);
@@ -65,7 +65,7 @@ public class Jaar_overzicht extends AppCompatActivity {
         btnJaar4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent Periode = new Intent(Jaar_overzicht.this,periode_overzicht.class);
+                Intent Periode = new Intent(Jaar_overzicht.this,ListViewer.class);
                 b.putInt("jaar", 4);
                 Periode.putExtras(b);
                 startActivity(Periode);

@@ -22,10 +22,6 @@
         </activity>
         <activity android:name=".JaarKeuzevakkenCijfers" />
         <activity android:name=".ListViewer" />
-        <activity
-            android:name=".FirebaseTest"
-            android:label="@string/title_activity_firebase_test"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".periode_overzicht"></activity>
     </application>
 

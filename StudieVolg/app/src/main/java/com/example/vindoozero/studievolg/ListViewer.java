@@ -37,6 +37,7 @@ public class ListViewer extends AppCompatActivity {
     public int jaar;
     public int periode;
     public double result;
+    public Query query;
     public ArrayList<classPeriodes> list = new ArrayList<classPeriodes>();
 
     @Override
@@ -53,14 +54,23 @@ public class ListViewer extends AppCompatActivity {
         if(b != null){
             jaar = b.getInt("jaar");
             periode = b.getInt("periode");
+            if (periode == 0){
+                this.setTitle("Jaar " + jaar);
+            } else {
+                this.setTitle("Periode " + periode);
+            }
         }
-
-        this.setTitle("Periode " + periode);
 
         // Hier word een referentie naar de database (FireBase) in een variabele gedaan,
         // vervolgens wordt hier een query op afgevuurd die de vakken pakt met de desbetreffende Jaar en Periode (Zie Bundle)
         final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        final Query query = ref.orderByChild("j_p").equalTo(jaar + "_" + periode);
+
+        if (periode == 0){
+            query = ref.orderByChild("jaar").equalTo(jaar);
+        }else{
+            query = ref.orderByChild("j_p").equalTo(jaar + "_" + periode);
+        }
+
         ListView lv = (ListView) findViewById(R.id.J1Periode1);
 
         // Hier worden de verschillende entries uit de database binnen de adapter gekoppeld...
